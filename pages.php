@@ -86,7 +86,8 @@ $query = "SELECT COUNT(*) AS n FROM ff_classinfo";
 $res = $wpdb->get_results( $query );
 $rows = $res[0]->n;
 unset( $res );
-$url = plugins_url() . "/ffxiv/";
+//$url = plugins_url() . "/ffxiv/";
+$url = dirname (__FILE__) . "/";
 print "<link rel='stylesheet' type='text/css' href='".$url."style/style.css'>
 		<script type='text/javascript' src='".$url."lib/jquery.tablesorter.min.js'></script>
 		<script type='text/javascript' src='".$url."lib/jquery.tablesorter.widgets.min.js'></script>
@@ -169,7 +170,8 @@ $query = "SELECT COUNT(*) AS n FROM ff_classinfo";
 $res = $wpdb->get_results( $query );
 $rows = $res[0]->n;
 unset( $res );
-$url = plugins_url() . "/ffxiv/";
+//$url = plugins_url() . "/ffxiv/";
+$url = dirname (__FILE__) . "/";
 print "<link rel='stylesheet' type='text/css' href='".$url."style/style.css'>
 		<script type='text/javascript' src='".$url."lib/jquery.tablesorter.min.js'></script>
 		<script type='text/javascript' src='".$url."lib/jquery.tablesorter.widgets.min.js'></script>

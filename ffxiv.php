@@ -50,5 +50,6 @@ add_action("init","ffxiv_init");
 
 function my_js_include_function() {
 	//wp_enqueue_style( 'style-name', get_stylesheet_uri() );
-	wp_enqueue_script( 'tooltip', plugins_url() . '/ffxiv/js/tooltips.js', array() );
+	//wp_enqueue_script( 'tooltip', plugins_url() . '/ffxiv/js/tooltips.js', array() );
+	wp_enqueue_script( 'tooltip', dirname(__FILE__) . '/js/tooltips.js', array() );
 }
