@@ -19,26 +19,26 @@ function ffxiv_install() {
     $the_page_name_2 = 'members_jobs';
 
     // the menu entry...
-    delete_option("ffivx_page_title_1");
-    add_option("ffivx_page_title_1", $the_page_title_1, '', 'yes');
+    delete_option("ffxiv_page_title_1");
+    add_option("ffxiv_page_title_1", $the_page_title_1, '', 'yes');
     // the slug...
-    delete_option("ffivx_page_name_1");
-    add_option("ffivx_page_name_1", $the_page_name_1, '', 'yes');
+    delete_option("ffxiv_page_name_1");
+    add_option("ffxiv_page_name_1", $the_page_name_1, '', 'yes');
     // the id...
-    delete_option("ffivx_page_id_1");
-    add_option("ffivx_page_id_1", '0', '', 'yes');
+    delete_option("ffxiv_page_id_1");
+    add_option("ffxiv_page_id_1", '0', '', 'yes');
 
     $the_page_1 = get_page_by_title( $the_page_title_1 );
 
     // the menu entry...
-    delete_option("ffivx_page_title_2");
-    add_option("ffivx_page_title_2", $the_page_title_2, '', 'yes');
+    delete_option("ffxiv_page_title_2");
+    add_option("ffxiv_page_title_2", $the_page_title_2, '', 'yes');
     // the slug...
-    delete_option("ffivx_page_name_2");
-    add_option("ffivx_page_name_2", $the_page_name_2, '', 'yes');
+    delete_option("ffxiv_page_name_2");
+    add_option("ffxiv_page_name_2", $the_page_name_2, '', 'yes');
     // the id...
-    delete_option("ffivx_page_id_2");
-    add_option("ffivx_page_id_2", '0', '', 'yes');
+    delete_option("ffxiv_page_id_2");
+    add_option("ffxiv_page_id_2", '0', '', 'yes');
 
     $the_page_2 = get_page_by_title( $the_page_title_2 );
 
@@ -69,8 +69,8 @@ function ffxiv_install() {
 
     }
 
-    delete_option( 'ffivx_page_id_1' );
-    add_option( 'ffivx_page_id_1', $the_page_id_1 );
+    delete_option( 'ffxiv_page_id_1' );
+    add_option( 'ffxiv_page_id_1', $the_page_id_1 );
 
 
     if ( ! $the_page_2 ) {
@@ -99,39 +99,39 @@ function ffxiv_install() {
 
     }
 
-    delete_option( 'ffivx_page_id_2' );
-    add_option( 'ffivx_page_id_2', $the_page_id_2 );
+    delete_option( 'ffxiv_page_id_2' );
+    add_option( 'ffxiv_page_id_2', $the_page_id_2 );
 
-    wp_schedule_event(time(), 'daily', 'ffivx_update_db');
+    wp_schedule_event(time(), 'daily', 'ffxiv_update_db');
     // Forzamos que se ejecute dentro de 1 minuto
-    wp_schedule_single_event( time() + 5, 'ffivx_update_db' );
+    wp_schedule_single_event( time() + 5, 'ffxiv_update_db' );
 }
 
 function ffxiv_remove() {
 
     global $wpdb;
 
-    $the_page_title_1 = get_option( "ffivx_page_title_1" );
-    $the_page_name_1 = get_option( "ffivx_page_name_1" );
+    $the_page_title_1 = get_option( "ffxiv_page_title_1" );
+    $the_page_name_1 = get_option( "ffxiv_page_name_1" );
 
     //  the id of our page...
-    $the_page_id_1 = get_option( 'ffivx_page_id_1' );
+    $the_page_id_1 = get_option( 'ffxiv_page_id_1' );
     if( $the_page_id_1 ) {
         wp_delete_post( $the_page_id_1 ); // this will trash, not delete
     }
 
-    $the_page_title_2 = get_option( "ffivx_page_title_2" );
-    $the_page_name_2 = get_option( "ffivx_page_name_2" );
+    $the_page_title_2 = get_option( "ffxiv_page_title_2" );
+    $the_page_name_2 = get_option( "ffxiv_page_name_2" );
 
     //  the id of our page...
-    $the_page_id_2 = get_option( 'ffivx_page_id_2' );
+    $the_page_id_2 = get_option( 'ffxiv_page_id_2' );
     if( $the_page_id_2 ) {
         wp_delete_post( $the_page_id_2 ); // this will trash, not delete
     }
 
 
-    delete_option("ffivx_page_title");
-    delete_option("ffivx_page_name");
-    delete_option("ffivx_page_id");
-    wp_clear_scheduled_hook('ffivx_update_db');
+    delete_option("ffxiv_page_title");
+    delete_option("ffxiv_page_name");
+    delete_option("ffxiv_page_id");
+    wp_clear_scheduled_hook('ffxiv_update_db');
 }

@@ -3,8 +3,7 @@
 include('export_config.php');
 include('export_player.php');
 
-//add_action('ffxiv_update_db','ffxiv_update_db');
-add_action('ffxiv_update_db',function() { ffxiv_update_db(); });
+add_action('ffxiv_update_db','ffxiv_update_db');
 
 function ffxiv_update_db()
 {
